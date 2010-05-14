@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" name="socket" applicationComplete="begin();">
+	<mx:Script>
+        <![CDATA[
+    	import flash.utils.clearInterval;
+    	import flash.utils.setInterval;
+        import flash.utils.setTimeout;
+        import flash.net.Socket;
+        import flash.utils.ByteArray;
+
+        private var socket:Socket = new Socket();
+        private var host:String = "localhost";
+        private var port:int = 9999;
+        private var userId:int;
+		private var pingId:uint;
+		private var reconnect:Boolean = true;
+		
+        internal function begin():void {
+        	ExternalInterface.addCallback("send", send);
+   			ExternalInterface.addCallback("close", close);
+   			
+//   			this.host = ExternalInterface.call("getHost");	  
+//        	this.userId = ExternalInterface.call("getUser");
+        	this.connect();
+        }
+        
+        internal function connect():void {
+        	if (this.socket!=null && this.socket.connected)
+        		return;
+        	
+        	try {
+	            socket.addEventListener(Event.CONNECT, onConnect);
+	            socket.addEventListener(Event.CLOSE, onClose);
+	            socket.addEventListener(ProgressEvent.SOCKET_DATA, onData);
+	            socket.addEventListener(IOErrorEvent.IO_ERROR, onError);
+	            socket.addEventListener(SecurityErrorEvent.SECURITY_ERROR, onSecurityError);
+	            socket.connect(host, port);
+   			} catch (error:Error) {
+//   				ExternalInterface.call("SocketOnError", error);
+   				this.reset();
+   			}
+        }
+        
+        internal function ping():void {
+        	var pingStr:String = "[{command:'ping',clientType:'message-proxy-client'}]";
+        	this.send(pingStr);
+        }
+        
+        internal function reset():void {
+        	if (reconnect && !this.socket.connected){
+//        		ExternalInterface.call("SocketReset");
+        		setTimeout(connect, 1000*3);
+        	}
+        }  
+        
+        internal function onConnect(event:Event):void {
+//        	ExternalInterface.call("SocketOnConnect");
+        	this.send("[{command:'authentication',userId:'"+userId+"'}]");
+			this.pingId = setInterval(ping,1000*120);
+        }
+
+        internal function onClose(event:Event):void {
+//        	ExternalInterface.call("SocketOnClose");
+        	if (this.pingId){
+        		clearInterval(this.pingId);
+        	}
+			this.reset();
+        }
+
+		internal function onError(event:IOErrorEvent):void {
+//			ExternalInterface.call("SocketOnError", "IOError:"+event.toString());
+			this.reset();
+		}
+		
+		internal function onSecurityError(event:SecurityErrorEvent):void {
+//			ExternalInterface.call("SocketOnError", "SecurityError"+event.toString());
+			this.reset();
+		}
+
+        internal function onData(event:ProgressEvent):void {
+        	var result:String = socket.readUTFBytes(socket.bytesAvailable);
+        	
+//        	ExternalInterface.call("SocketOnData",socket.readUTFBytes(socket.bytesAvailable));
+        }  
+        
+        public function close():void {
+        	if (this.socket!=null && this.socket.connected)
+        		this.socket.close();
+        }
+
+        public function send(text:String):void {
+        	if (socket !=null && socket.connected) {
+        		socket.writeUTFBytes(text);
+            	socket.flush();
+        	}
+        }
+        ]]>
+    </mx:Script>
+</mx:Application>

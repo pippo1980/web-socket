@@ -1,0 +1,31 @@
+#!/bin/bash
+#update sources
+svn up
+
+#kill server
+PID=`ps -ef | grep 'com.rensea.message.MessageSocketServerRunner' | grep -v ' grep' | awk '{print $2}'`
+if [ ! -e $PID ];
+then
+	echo "PID is $PID"
+	kill -9 $PID
+else
+	echo "socket server not run"
+fi
+
+#build server
+rm -rf message-server-socket-1.1-distribution.dir
+mvn clean && mvn assembly:directory $1
+rm -rf message-server-socket-1.1-distribution.dir/message-server-socket-1.1/lib/message-server-socket-1.1.jar
+
+#copy outside maven jar
+cp lib/rensea-model.jar message-server-socket-1.1-distribution.dir/message-server-socket-1.1/lib/
+cp lib/norm-2.0.jar message-server-socket-1.1-distribution.dir/message-server-socket-1.1/lib/
+
+#delete sources
+mvn clean
+#rm -rf src
+
+#start server
+cd message-server-socket-1.1-distribution.dir/message-server-socket-1.1/
+echo "starting socket server..."
+java -server -Xms512m -Xmx512m -XX:NewSize=256m -verbosegc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+UseConcMarkSweepGC -XX:+UseParNewGC -cp classes:lib/* com.rensea.message.MessageSocketServerRunner $1 >> /dev/null 2>&1 &

@@ -1,0 +1,17 @@
+#!/bin/bash
+#update sources
+
+#kill server
+PID=`ps -ef | grep 'com.rensea.message.MessageSocketServerRunner' | grep -v ' grep' | awk '{print $2}'`
+if [ ! -e $PID ];
+then
+	echo "PID is $PID"
+	kill -9 $PID
+else
+	echo "socket server not run"
+fi
+
+#start server
+cd message-server-socket-1.1-distribution/message-server-socket-1.1/
+echo "starting socket server..."
+java -cp classes:lib/* com.rensea.message.MessageSocketServerRunner $1 >> /dev/null 2>&1 &

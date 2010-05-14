@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context" xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:tx="http://www.springframework.org/schema/tx" xmlns:util="http://www.springframework.org/schema/util"
+    xmlns:lang="http://www.springframework.org/schema/lang"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+                http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+                http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd
+        http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-2.5.xsd"
+    default-autowire="no" default-lazy-init="false">
+
+    <aop:aspectj-autoproxy proxy-target-class="true" />
+
+    <context:annotation-config />
+
+    <context:component-scan base-package="com.rensea.message.server" />
+
+    <bean id="messageServerSettings" class="com.rensea.message.server.MessageServerSettings" init-method="init">
+        <constructor-arg value="${message.server.settings.file}" />
+    </bean>
+
+    <bean id="socket_server_executor" class="com.rensea.message.server.ScheduleThreadPoolExecutorFactoryBean">
+        <property name="beanName" value="socket_server_executor" />
+        <property name="threadGroupName" value="socket.server.threadPool" />
+        <property name="allowCoreThreadTimeOut" value="true" />
+        <property name="keepAliveSeconds" value="${thread.pool.keepAliveSeconds}" />
+        <property name="corePoolSize" value="${thread.pool.corePoolSize}" />
+        <property name="maxPoolSize" value="${thread.pool.maxPoolSize}" />
+    </bean>
+
+    <bean class="com.rensea.message.server.tcp.connection.TcpServerManager" init-method="init"
+        destroy-method="destory">
+        <property name="address_list" value="${server.address_list}" />
+        <property name="maxConcurrentConnections" value="${thread.pool.corePoolSize}" />
+        <property name="connectionTimeoutMillis" value="28800000" />
+        <property name="idleTimeoutMillis" value="1800000" />
+        <property name="autoflush" value="false" />
+        <property name="handler" ref="serverHandler" />
+    </bean>
+
+    <!--
+        <bean id="tcp_server" class="org.xsocket.connection.Server" init-method="start"
+        destroy-method="close"> <property name="autoflush" value="false" /> <property
+        name="connectionTimeoutMillis" value="28800000" /> <property name="idleTimeoutMillis" value="1800000"
+        /> <property name="maxConcurrentConnections" value="${thread.pool.corePoolSize}" /> <constructor-arg
+        type="java.lang.String" value="114.80.70.8" /> <constructor-arg type="int" value="9999" />
+        <constructor-arg type="org.xsocket.connection.IHandler" ref="serverHandler" /> <property
+        name="workerpool"> <bean class="com.sirius.component.spring.ThreadPoolExecutorFactoryBean"> <property
+        name="beanName" value="xsocket_socket_server_executor" /> <property name="threadGroupName"
+        value="xsocket_socket.server.threadPool" /> <property name="allowCoreThreadTimeOut" value="true" />
+        <property name="keepAliveSeconds" value="${thread.pool.keepAliveSeconds}" /> <property
+        name="corePoolSize" value="${thread.pool.corePoolSize}" /> <property name="maxPoolSize"
+        value="${thread.pool.maxPoolSize}" /> </bean> </property> <property name="serverName"
+        value="message_tcp_server" /> <property name="startUpLogMessage" value="message server start
+        successful" /> </bean>
+    -->
+
+    <bean id="queueOperation" class="com.rensea.message.spi.queue.XMemcachedQueue" init-method="initialize">
+        <property name="configuration">
+            <bean class="com.rensea.message.spi.queue.QueueConfiguration">
+                <property name="serverId" value="${message.server.queue.name}" />
+                <property name="queueServers" value="${message.server.queueServers}" />
+            </bean>
+        </property>
+        <property name="connectionPoolSize" value="${message.server.queue.connection.pool.size}" />
+    </bean>
+
+    <bean id="cachedOperation" class="com.rensea.message.spi.XMemcachedOperation" init-method="initialize">
+        <property name="servers" value="${rensea.cache.Servers}" />
+    </bean>
+
+    <bean id="messageQueueConsumer" class="com.rensea.message.spi.MemcachedQueueConsumer" init-method="init"
+        destroy-method="destory">
+        <property name="taskThreadSize" value="${message.server.thread.pool.size}" />
+        <property name="interval" value="${message.server.thread.pool.interval}" />
+        <property name="queueName" value="${message.server.queue.name}" />
+        <property name="queueOperation" ref="queueOperation" />
+        <property name="executorService" ref="socket_server_executor" />
+        <property name="messageDispatcher" ref="delegateMessageDispatcher" />
+    </bean>
+
+    <!--
+        <bean id="messageQueueConsumer" class="com.rensea.message.server.mock.MockMessageQueueConsumer"
+        init-method="init" destroy-method="destory"> </bean>
+    -->
+
+    <bean id="dataHandler" class="com.rensea.message.server.tcp.connection.handler.DataHandler">
+        <property name="filters">
+            <list>
+                <ref bean="policyFilter" />
+                <ref bean="commandFilter" />
+            </list>
+        </property>
+    </bean>
+
+    <bean id="message.cacheManager" class="com.sirius.component.ehcache.EhCacheManagerDelegate">
+        <property name="cacheManager">
+            <bean class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
+                <property name="cacheManagerName" value="com.rensea.message.server" />
+                <property name="configLocation" value="classpath:ehcache.xml" />
+            </bean>
+        </property>
+    </bean>
+
+    <util:map id="message_handler_mapping">
+        <!-- 朋友们 -->
+        <entry key="STATUS" value-ref="friendsStatusMessageHandler" />
+        <!-- 随便看看 -->
+        <entry key="ALL_STATUS" value-ref="strangerStatusMessageHandler" />
+        <!-- 用户标签 -->
+        <entry key="FOR_USER_TAG" value-ref="userTagMessageHandler" />
+        <!-- 置顶消息 -->
+        <entry key="STICK_STATUS" value-ref="stickStatusMessageHandler" />
+        <!-- 系统消息 -->
+        <entry key="SYSTEM" value-ref="systemMessageHandler" />
+        <!-- 圈子精华 -->
+        <entry key="TAG_FOLLOWING_MESSAGE" value-ref="tagFollowingMessageHandler" />
+        <!-- hash tag 消息 -->
+        <entry key="HASH_TAG" value-ref="hashTagMessageHandler" />
+        <!-- 任务提醒 -->
+        <entry key="TASK_NOTIFY_MESSAGE" value-ref="taskNotifyMessageHandler" />
+        <entry key="AUDITED_CONVERSATION_MESSAGE" value-ref="auditedConversationMessageHandler" />
+        <entry key="CONVERSATION_READED_MESSAGE" value-ref="conversationReadedMessageHandler" />
+        <entry key="SCORE_CHANGE" value-ref="defaultMessageHandler" />
+        <entry key="COUNT_UPDATE" value-ref="defaultMessageHandler" />
+        <entry key="MENTION" value-ref="defaultMessageHandler" />
+        <entry key="CONVERSATION_MESSAGE" value-ref="defaultMessageHandler" />
+        <entry key="UPDATE_CONVERSATION_COUNT" value-ref="defaultMessageHandler" />
+        <entry key="CONVERSATION_DOOR" value-ref="defaultMessageHandler" />
+        <entry key="TASK_COMPLETE_MESSAGE" value-ref="defaultMessageHandler" />
+    </util:map>
+</beans>

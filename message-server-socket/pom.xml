@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.rensea.message</groupId>
+        <artifactId>message-parent</artifactId>
+        <version>1.1</version>
+    </parent>
+    <artifactId>message-server-socket</artifactId>
+    <packaging>jar</packaging>
+    <name>${artifactId}</name>
+
+    <dependencies>
+        <!-- web app support -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mortbay.jetty</groupId>
+            <artifactId>jetty</artifactId>
+            <version>6.1.21</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mortbay.jetty</groupId>
+            <artifactId>jetty-util</artifactId>
+            <version>6.1.21</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mortbay.jetty</groupId>
+            <artifactId>jetty-plus</artifactId>
+            <version>6.1.21</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mortbay.jetty</groupId>
+            <artifactId>jetty-naming</artifactId>
+            <version>6.1.21</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mortbay.jetty</groupId>
+            <artifactId>jetty-management</artifactId>
+            <version>6.1.21</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mortbay.jetty</groupId>
+            <artifactId>jsp-2.1-jetty</artifactId>
+            <version>6.1.21</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- framework -->
+        <dependency>
+            <groupId>${groupId}</groupId>
+            <artifactId>message-remote</artifactId>
+            <version>20100409-1</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>${groupId}</groupId>
+            <artifactId>message-server-jmx</artifactId>
+            <version>20101015</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sirius</groupId>
+            <artifactId>sirius-core</artifactId>
+            <version>1.1.5-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sirius</groupId>
+            <artifactId>sirius-component</artifactId>
+            <version>20100202</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- log facade -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.5.2</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.5.2</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- tcp socket -->
+        <dependency>
+            <groupId>org.xsocket</groupId>
+            <artifactId>xSocket</artifactId>
+            <version>2.8.2</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!--<dependency>
+            <groupId>com.adobe.blazeds</groupId>
+            <artifactId>blazeds-core</artifactId>
+            <version>3.2.0.3978</version>
+            <scope>compile</scope>
+        </dependency>-->
+
+        <!--<dependency>
+            <groupId>com.adobe.blazeds</groupId>
+            <artifactId>blazeds-common</artifactId>
+            <version>3.2.0.3978</version>
+            <scope>compile</scope>
+        </dependency>-->
+
+        <!--<dependency>
+            <groupId>com.adobe.blazeds</groupId>
+            <artifactId>blazeds-remoting</artifactId>
+            <version>3.2.0.3978</version>
+            <scope>compile</scope>
+        </dependency>-->
+
+        <!--<dependency>
+            <groupId>org.apache.mina</groupId>
+            <artifactId>mina-core</artifactId>
+            <version>2.0.0-M6</version>
+            <scope>compile</scope>
+        </dependency>-->
+
+        <!-- system -->
+        <dependency>
+            <groupId>com.rensea</groupId>
+            <artifactId>model</artifactId>
+            <version>2.0</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/lib/rensea-model.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>com.rensea</groupId>
+            <artifactId>norm</artifactId>
+            <version>2.0</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/lib/norm-2.0.jar</systemPath>
+        </dependency>
+        <!-- test support -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.4</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>2.5.6</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <filters>
+            <filter>${basedir}/filters/${deploy-strategy}.properties</filter>
+        </filters>
+
+        <resources>
+            <resource>
+                <directory>${basedir}/src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+            <resource>
+                <directory>${basedir}/filters</directory>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
+
+        <plugins>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <filters>
+                        <filter>${basedir}/filters/${deploy-strategy}.properties</filter>
+                    </filters>
+                    <descriptors>
+                        <descriptor>distribution.xml</descriptor>
+                    </descriptors>
+                    <outputDirectory>${basedir}</outputDirectory>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <warName>message-server</warName>
+                    <webXml>${basedir}/src/main/webapp/WEB-INF/web.xml</webXml>
+                </configuration>
+            </plugin>
+        </plugins>
+
+    </build>
+
+    <profiles>
+        <profile>
+            <id>release</id>
+            <properties>
+                <deploy-strategy>release</deploy-strategy>
+            </properties>
+        </profile>
+        <profile>
+            <id>test</id>
+            <properties>
+                <deploy-strategy>test</deploy-strategy>
+            </properties>
+        </profile>
+        <profile>
+            <id>preview</id>
+            <properties>
+                <deploy-strategy>preview</deploy-strategy>
+            </properties>
+        </profile>
+        <profile>
+            <id>develop</id>
+            <properties>
+                <deploy-strategy>develop</deploy-strategy>
+            </properties>
+        </profile>
+    </profiles>
+</project>

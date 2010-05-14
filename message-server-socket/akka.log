@@ -1,0 +1,15 @@
+INF [20100222-15:55:29.781] akka: Config loaded from the application classpath.
+DEB [20100222-15:55:30.093] nio: Using the autodetected NIO constraint level: 0
+INF [20100222-15:55:30.343] remote: Starting remote server at [localhost:9991]
+DEB [20100222-15:55:31.187] remote: Initiating JGroups-based cluster actor
+DEB [20100222-15:55:36.156] dispatch: Created event-driven:executor:dispatcher:global-1
+DEB [20100222-15:55:36.156] actor: [Actor[se.scalablesolutions.akka.remote.JGroupsClusterActor:1266842108372]] has started
+DEB [20100222-15:55:36.250] actor: [Actor[se.scalablesolutions.akka.actor.Supervisor:1266842113419]] has started
+DEB [20100222-15:55:36.281] remote: [pippo-11793|0]
+DEB [20100222-15:55:36.281] remote: 	pippo-11793
+DEB [20100222-15:55:36.281] remote: 	
+DEB [20100222-15:55:36.296] actor: [Actor[se.scalablesolutions.akka.remote.JGroupsClusterActor:1266842108372]] has started
+DEB [20100222-15:55:36.296] actor: Linking actor [Actor[se.scalablesolutions.akka.remote.JGroupsClusterActor:1266842108372]] to actor [Actor[se.scalablesolutions.akka.actor.Supervisor:1266842113419]]
+DEB [20100222-15:55:36.296] actor: [Actor[se.scalablesolutions.akka.actor.Supervisor:1266842113419]] has started
+DEB [20100222-15:55:36.312] dispatch: Created event-driven:executor:dispatcher:global-2
+DEB [20100222-15:55:36.312] remote: RegisterLocalNode: RemoteAddress(localhost,9991)

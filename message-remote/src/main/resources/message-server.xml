@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:lang="http://www.springframework.org/schema/lang"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+                http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+                http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd
+        http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-2.5.xsd"
+	default-autowire="no" default-lazy-init="false">
+
+	<bean id="message.server.scheduledExecutorFactoryBean" class="org.springframework.scheduling.concurrent.ScheduledExecutorFactoryBean">
+		<property name="poolSize" value="${message.server.thread.pool.size}" />
+	</bean>
+
+	<bean id="message.server.queueConfiguration" class="com.rensea.message.spi.queue.QueueConfiguration">
+		<property name="serverId" value="${message.server.id}" />
+		<property name="queueServers" value="${message.server.queueServers}" />
+	</bean>
+
+	<bean id="message.server.queueOperation" class="com.rensea.message.spi.queue.MemcachedQueue"
+		init-method="initialize" abstract="true">
+		<property name="configuration" ref="message.server.queueConfiguration" />
+		<property name="poolName" value="${message.server.id}"></property>
+	</bean>
+
+	<bean id="memcachedQueueAgent" class="com.rensea.message.spi.MemcachedQueueAgent" init-method="init"
+		destroy-method="destory" abstract="true">
+		<property name="queueOperation" ref="message.server.queueOperation" />
+	</bean>
+
+	<bean id="memcachedQueueConsumer" class="com.rensea.message.spi.MemcachedQueueConsumer"
+		init-method="init" destroy-method="destory" abstract="true">
+		<property name="queueOperation" ref="message.server.queueOperation" />
+		<property name="taskThreadSize" value="${message.server.thread.pool.size}" />
+		<property name="executorService" ref="message.server.scheduledExecutorFactoryBean" />
+	</bean>
+
+</beans>

@@ -1,0 +1,66 @@
+<ehcache>
+    <!--
+        Sets the path to the directory where cache .data files are created. If the path is a Java System
+        Property it is replaced by its value in the running VM. The following properties are translated:
+        user.home - User's home directory user.dir - User's current working directory java.io.tmpdir - Default
+        temp file path
+    -->
+    <diskStore path="java.io.tmpdir/message-server" />
+
+    <defaultCache maxElementsInMemory="5000" eternal="false" overflowToDisk="false"
+        timeToIdleSeconds="120" timeToLiveSeconds="120" diskPersistent="false"
+        diskExpiryThreadIntervalSeconds="120" />
+
+    <cache name="com.rensea.message.server"
+        maxElementsInMemory="5000" eternal="false"
+        overflowToDisk="false"
+        timeToIdleSeconds="30"
+        timeToLiveSeconds="30"
+        diskPersistent="false"
+        diskExpiryThreadIntervalSeconds="300" />
+
+    <cache name="com.rensea.message.server.user.tags"
+        maxElementsInMemory="5000" eternal="false"
+        overflowToDisk="false"
+        timeToIdleSeconds="30"
+        timeToLiveSeconds="30"
+        diskPersistent="false"
+        diskExpiryThreadIntervalSeconds="300" />
+
+    <cache name="com.rensea.message.server.user.follower"
+        maxElementsInMemory="5000" eternal="false"
+        overflowToDisk="false"
+        timeToIdleSeconds="30"
+        timeToLiveSeconds="30"
+        diskPersistent="false"
+        diskExpiryThreadIntervalSeconds="300" />
+
+    <cache name="com.rensea.message.server.user.following"
+        maxElementsInMemory="5000" eternal="false"
+        overflowToDisk="false"
+        timeToIdleSeconds="30"
+        timeToLiveSeconds="30"
+        diskPersistent="false"
+        diskExpiryThreadIntervalSeconds="300" />
+
+    <cache name="com.rensea.message.server.user"
+        maxElementsInMemory="5000" eternal="false"
+        overflowToDisk="false"
+        timeToIdleSeconds="30"
+        timeToLiveSeconds="30"
+        diskPersistent="false"
+        diskExpiryThreadIntervalSeconds="300" />
+
+    <cache name="com.rensea.message.server.tag.following"
+        maxElementsInMemory="5000" eternal="false"
+        overflowToDisk="false"
+        timeToIdleSeconds="30"
+        timeToLiveSeconds="30"
+        diskPersistent="false"
+        diskExpiryThreadIntervalSeconds="300" />
+
+    <!--
+        See http://ehcache.sourceforge.net/documentation/#mozTocId258426 for how to configure caching for your
+        objects
+    -->
+</ehcache>

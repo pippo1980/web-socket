@@ -1,0 +1,110 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<title>robited</title>
+		<script type="text/javascript" src="Orbited.js"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//var socket_host = "rensea.rj8g.com"
+			//var rensea_proxy = "http://talk.rj8g.com/html/orbited_proxy.html";
+		try {
+			var socket_host = "message.renjian.com"
+			var rensea_proxy = "http://renjian.com/html/orbited_proxy.html";
+
+			var queryString = function(name){
+				if(!/^\w+$/.test(name)) return null;
+				var url = location.href;
+				var re = new RegExp("(?:\\?|\\&)" + name + "=([^&]*)","i");
+				if(!re.test(url)) return null;
+				return decodeURIComponent(re.exec(url)[1]);
+			}
+
+			var userId = queryString("userId");
+			var messageTypes = queryString("messageTypes");
+			var command = queryString("orbited_command");
+			var comet_connection = null;
+
+			function comet_init(){
+				comet_connection = new Orbited.TCPSocket();
+				comet_connection.open(socket_host, 9999, false);
+
+				comet_connection.onopen = function() {
+					if (userId != null && messageTypes != null) {
+						var authentication = "[{command:'authentication',userId:'"+ userId +"',messageTypes:" + messageTypes + ",clientType:'orbited'}]";
+						comet_connection.send(authentication);
+			            document.getElementById("orbited_callback").src = rensea_proxy + '?comet_connected=true';
+		            }
+		        }
+
+		        comet_connection.onclose = function(code) {
+		        	document.getElementById("orbited_callback").src = rensea_proxy + '?comet_connected=false';
+		        }
+			}
+
+			comet_init();
+
+			var last_ping_time = 0;
+			function comet_ping(userId){
+				comet_connection.send("[{command:'ping',userId:'"+ userId +"',clientType:'orbited'}]");
+				var curDate=new Date();
+				var cur_time = curDate.getTime();
+				if ((cur_time - last_ping_time) > (1000*60)){
+					if (comet_connection != null) {
+						comet_connection.close();
+					}
+					comet_init();
+					Comet.connect();
+				}
+			}
+
+			var myDate=new Date();
+			last_ping_time = myDate.getTime();
+			setInterval("comet_ping("+userId+")",1000*30);
+
+			var Comet = function(){
+
+				return {
+					connect : function(){
+						comet_connection.onread = function(data) {
+				        	if (data.indexOf("ping=")==0) {
+				        		var myDate=new Date();
+				        		last_ping_time = myDate.getTime();
+				        	}
+				        	document.getElementById("orbited_callback").src = rensea_proxy + '?data='+data;
+				        }
+					},
+
+					send : function(message){
+						comet_connection.onread = function(data) {
+				        	if (data.indexOf("ping=")==0) {
+				        		var myDate=new Date();
+				        		last_ping_time = myDate.getTime();
+				        	}
+				        	document.getElementById("orbited_callback").src = rensea_proxy + '?data='+data;
+				        	comet_connection.send(message);
+				        }
+					},
+
+					close : function(){
+						comet_connection.close();
+						document.getElementById("orbited_callback").src = rensea_proxy + '?comet_connected=false';
+					}
+				};
+
+			}();
+
+			if ("connect" == command) {
+				Comet.connect();
+			} else  if ("close" == command) {
+				Comet.close();
+			} else if (command != null && command != "") {
+				Comet.send(command);
+			}
+		} catch (e) {
+
+		}
+		</script>
+		<iframe id="orbited_callback" width="0" height="0"></iframe>
+	</body>
+</html>

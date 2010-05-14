@@ -1,0 +1,32 @@
+#!/bin/bash
+PID=`ps -ef | grep 'com.rensea.message.MessageSocketServerRunner' | grep -v ' grep' | awk '{print $2}'`
+if [ ! -e $PID ];
+then
+	echo "PID is $PID"
+	kill -9 $PID
+else
+	echo "socket server not run"
+fi
+
+#update sources
+svn up
+rm -rf message-server-socket-1.1-distribution
+mvn clean && mvn assembly:directory $1
+rm -rf message-server-socket-1.1-distribution/message-server-socket-1.1/lib/message-server-socket-1.1.jar
+
+#do confusion
+java -jar proguard-4.4.jar @proguard.pro
+
+#copy outside maven jar
+cp lib/rensea-model.jar message-server-socket-1.1-distribution/message-server-socket-1.1/lib/
+cp lib/norm-2.0.jar message-server-socket-1.1-distribution/message-server-socket-1.1/lib/
+
+#delete sources
+mvn clean
+rm -rf src
+rm -rf message-server-socket-1.1-distribution/message-server-socket-1.1/classes
+
+#start server
+cd message-server-socket-1.1-distribution/message-server-socket-1.1/
+echo "starting socket server..."
+java -cp test-classes:lib/* com.rensea.message.MessageSocketServerRunner $1 >> /dev/null 2>&1 &

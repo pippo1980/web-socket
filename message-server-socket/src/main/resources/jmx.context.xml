@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context" xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:tx="http://www.springframework.org/schema/tx" xmlns:util="http://www.springframework.org/schema/util"
+    xmlns:lang="http://www.springframework.org/schema/lang"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+                http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+                http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd
+        http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-2.5.xsd"
+    default-autowire="no" default-lazy-init="false">
+
+    <bean id="jmxAttributeSource" class="org.springframework.jmx.export.annotation.AnnotationJmxAttributeSource" />
+
+    <!-- will create management interface using annotation metadata -->
+    <bean id="assembler" class="org.springframework.jmx.export.assembler.MetadataMBeanInfoAssembler">
+        <property name="attributeSource" ref="jmxAttributeSource" />
+    </bean>
+
+    <!-- will pick up the ObjectName from the annotation -->
+    <bean id="namingStrategy" class="org.springframework.jmx.export.naming.MetadataNamingStrategy">
+        <property name="attributeSource" ref="jmxAttributeSource" />
+    </bean>
+
+    <!-- create mbean server -->
+    <bean id="socket_server_mbean_server" class="org.springframework.jmx.support.MBeanServerFactoryBean" >
+        <!--<property name="agentId" value="socket_server_mbean_server" />-->
+        <property name="locateExistingServerIfPossible" value="true" />
+    </bean>
+
+    <!-- export mbean -->
+    <bean id="socket_server_mbean_exporter" class="org.springframework.jmx.export.MBeanExporter">
+        <property name="server" ref="socket_server_mbean_server" />
+        <property name="assembler" ref="assembler" />
+        <property name="namingStrategy" ref="namingStrategy" />
+        <property name="autodetect" value="true" />
+    </bean>
+
+    <!--<bean id="registry" class="org.springframework.remoting.rmi.RmiRegistryFactoryBean">
+        <property name="port" value="${message.server.jmx.port}" />
+    </bean>-->
+
+    <!--<bean id="serverConnector" class="org.springframework.jmx.support.ConnectorServerFactoryBean">
+        <property name="objectName" value="connector:name=message_server" />
+        <property name="serviceUrl" value="${message.server.jmx.connector.url}" />
+        <property name="threaded" value="true" />
+        <property name="daemon" value="true" />
+        <property name="server" ref="socket_server_mbean_server" />
+        <property name="environment">
+            <map>
+                <entry key="jmx.remote.x.password.file" value="jmx.remote.x.password.file" />
+                <entry key="jmx.remote.x.access.file" value="jmx.remote.x.access.file" />
+            </map>
+        </property>
+
+    </bean>-->
+
+</beans>

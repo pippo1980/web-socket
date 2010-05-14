@@ -1,0 +1,1173 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+ <script type="text/javascript">
+ 
+ 
+ 
+ var codesite_token = "0222e624a17265bc4e02074f4924c842";
+ 
+ 
+ var logged_in_user_email = "philip.kissme@gmail.com";
+ 
+ </script>
+ 
+ 
+ <title>socket.swf - 
+ microant -
+ 
+ Project Hosting on Google Code</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
+ 
+ <link type="text/css" rel="stylesheet" href="http://www.gstatic.com/codesite/ph/17848733607936693291/css/ph_core.css">
+ 
+ <link type="text/css" rel="stylesheet" href="http://www.gstatic.com/codesite/ph/17848733607936693291/css/ph_detail.css" >
+ 
+ 
+ <link type="text/css" rel="stylesheet" href="http://www.gstatic.com/codesite/ph/17848733607936693291/css/d_sb_20080522.css" >
+ 
+ 
+ 
+<!--[if IE]>
+ <link type="text/css" rel="stylesheet" href="http://www.gstatic.com/codesite/ph/17848733607936693291/css/d_ie.css" >
+<![endif]-->
+</head>
+<body class="t4">
+ <div id="gaia">
+ 
+ <span>
+ 
+ <b>philip.kissme@gmail.com</b>
+ 
+ 
+ | <a href="/u/philip.kissme/" id="projects-dropdown" onclick="return false;">My favorites</a><img width="14" height="14" class="menuIcon off" id="menuIcon-projects-dropdown" src="http://www.gstatic.com/codesite/ph/images/cleardot.gif"/>
+ 
+ | <a href="/u/philip.kissme/" onclick="_CS_click('/gb/ph/profile');" title="Profile, Updates, and Settings">Profile</a>
+ | <a href="http://www.google.com/accounts/Logout?continue=http%3A%2F%2Fcode.google.com%2Fp%2Fmicroant%2Fsource%2Fbrowse%2Ftrunk%2FDealWayIM%2Fwebapp%2Fsocket.swf" onclick="_CS_click('/gb/ph/signout');">Sign out</a>
+ 
+ </span>
+
+ </div>
+ <div class="gbh" style="left: 0pt;"></div>
+ <div class="gbh" style="right: 0pt;"></div>
+ 
+ 
+ <div style="height: 1px"></div>
+<!--[if IE 6]>
+<div style="text-align:center;">
+Support browsers that contribute to open source, try <a href="http://www.firefox.com">Firefox</a> or <a href="http://www.google.com/chrome">Google Chrome</a>.
+</div>
+<![endif]-->
+ <table style="padding:0px; margin: 20px 0px 0px 0px; width:100%" cellpadding="0" cellspacing="0">
+ <tr style="height: 58px;">
+ <td style="width: 55px; text-align:center;">
+ <a href="/p/microant/">
+ 
+ 
+ 
+ <img src="http://www.gstatic.com/codesite/ph/images/defaultlogo.png"
+ alt="Project Logo">
+ 
+ 
+ 
+ </a>
+ </td>
+ <td style="padding-left: 0.8em">
+ 
+ <div id="pname" style="margin: 0px 0px -3px 0px">
+ <a href="/p/microant/" style="text-decoration:none; color:#000">microant</a>
+ </div>
+ <div id="psum">
+ <i><a id="project_summary_link" href="/p/microant/" style="text-decoration:none; color:#000">just play</a></i>
+ </div>
+ 
+ </td>
+ <td style="white-space:nowrap; text-align:right">
+ 
+ <form action="/hosting/search">
+ <input size="30" name="q" value="">
+ <input type="submit" name="projectsearch" value="Search projects" >
+ </form>
+ 
+ </tr>
+ </table>
+
+
+
+ <table id="mt" cellspacing="0" cellpadding="0" width="100%" border="0">
+ <tr>
+ <th onclick="if (!cancelBubble) _go('/p/microant/');">
+ <div class="tab inactive">
+ <div class="round4"></div>
+ <div class="round2"></div>
+ <div class="round1"></div>
+ <div class="box-inner">
+ <a onclick="cancelBubble=true;" href="/p/microant/">Project&nbsp;Home</a>
+ </div>
+ </div>
+ </th><td>&nbsp;&nbsp;</td>
+ 
+ 
+ 
+ 
+ <th onclick="if (!cancelBubble) _go('/p/microant/downloads/list');">
+ <div class="tab inactive">
+ <div class="round4"></div>
+ <div class="round2"></div>
+ <div class="round1"></div>
+ <div class="box-inner">
+ <a onclick="cancelBubble=true;" href="/p/microant/downloads/list">Downloads</a>
+ </div>
+ </div>
+ </th><td>&nbsp;&nbsp;</td>
+ 
+ 
+ 
+ 
+ 
+ <th onclick="if (!cancelBubble) _go('/p/microant/w/list');">
+ <div class="tab inactive">
+ <div class="round4"></div>
+ <div class="round2"></div>
+ <div class="round1"></div>
+ <div class="box-inner">
+ <a onclick="cancelBubble=true;" href="/p/microant/w/list">Wiki</a>
+ </div>
+ </div>
+ </th><td>&nbsp;&nbsp;</td>
+ 
+ 
+ 
+ 
+ 
+ <th onclick="if (!cancelBubble) _go('/p/microant/issues/list');">
+ <div class="tab inactive">
+ <div class="round4"></div>
+ <div class="round2"></div>
+ <div class="round1"></div>
+ <div class="box-inner">
+ <a onclick="cancelBubble=true;" href="/p/microant/issues/list">Issues</a>
+ </div>
+ </div>
+ </th><td>&nbsp;&nbsp;</td>
+ 
+ 
+ 
+ 
+ 
+ <th onclick="if (!cancelBubble) _go('/p/microant/source/checkout');">
+ <div class="tab active">
+ <div class="round4"></div>
+ <div class="round2"></div>
+ <div class="round1"></div>
+ <div class="box-inner">
+ <a onclick="cancelBubble=true;" href="/p/microant/source/checkout">Source</a>
+ </div>
+ </div>
+ </th><td>&nbsp;&nbsp;</td>
+ 
+ 
+ <th onclick="if (!cancelBubble) _go('/p/microant/admin');">
+ <div class="tab inactive">
+ <div class="round4"></div>
+ <div class="round2"></div>
+ <div class="round1"></div>
+ <div class="box-inner">
+ <a onclick="cancelBubble=true;" href="/p/microant/admin">Administer</a>
+ </div>
+ </div>
+ </th>
+ <td width="100%">&nbsp;</td>
+ </tr>
+</table>
+<table cellspacing="0" cellpadding="0" width="100%" align="center" border="0" class="st">
+ <tr>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td>
+ <div class="st2">
+ <div class="isf">
+ 
+ 
+ 
+ <span class="inst1"><a href="/p/microant/source/checkout">Checkout</a></span> |
+ <span class="inst2"><a href="/p/microant/source/browse/">Browse</a></span> |
+ <span class="inst3"><a href="/p/microant/source/list">Changes</a></span> |
+ 
+ <form action="http://www.google.com/codesearch" method="get" style="display:inline"
+ onsubmit="document.getElementById('codesearchq').value = document.getElementById('origq').value + ' package:http://microant\\.googlecode\\.com'">
+ <input type="hidden" name="q" id="codesearchq" value="">
+ <input maxlength="2048" size="35" id="origq" name="origq" value="" title="Google Code Search" style="font-size:92%">&nbsp;<input type="submit" value="Search Trunk" name="btnG" style="font-size:92%">
+ 
+  |
+ <a href="/p/microant/issues/entry?show=review&former=sourcelist">Request code review</a>
+ 
+ 
+ </form>
+ </div>
+</div>
+
+ </td>
+ 
+ 
+ 
+ 
+ 
+ <td height="4" align="right" valign="top" class="bevel-right">
+ <div class="round4"></div>
+ <div class="round2"></div>
+ <div class="round1"></div>
+ </td>
+ </tr>
+</table>
+<script type="text/javascript">
+ var cancelBubble = false;
+ function _go(url) { document.location = url; }
+</script>
+
+
+<div id="maincol"
+ 
+>
+
+ 
+<!-- IE -->
+
+
+
+<div class="expand">
+
+
+<style type="text/css">
+ #file_flipper { display: inline; float: right; white-space: nowrap; }
+ #file_flipper.hidden { display: none; }
+ #file_flipper .pagelink { color: #0000CC; text-decoration: underline; }
+ #file_flipper #visiblefiles { padding-left: 0.5em; padding-right: 0.5em; }
+</style>
+<div id="nav_and_rev" class="heading">
+ <div class="round4"></div>
+ <div class="round2"></div>
+ <div class="round1"></div>
+ <div class="box-inner" id="bub">
+ <div class="bub-top">
+ <div class="pagination" style="margin-left: 2em">
+ <table cellpadding="0" cellspacing="0" class="flipper">
+ <tbody>
+ <tr>
+ 
+ <td><b>r2551</b></td>
+ 
+ </tr>
+ </tbody>
+ </table>
+ </div>
+ 
+ <div class="" style="vertical-align: top">
+ <div class="src_crumbs src_nav">
+ <strong class="src_nav">Source path:&nbsp;</strong>
+ <span id="crumb_root">
+ 
+ <a href="/p/microant/source/browse/">svn</a>/&nbsp;</span>
+ <span id="crumb_links" class="ifClosed"><a href="/p/microant/source/browse/trunk/">trunk</a><span class="sp">/&nbsp;</span><a href="/p/microant/source/browse/trunk/DealWayIM/">DealWayIM</a><span class="sp">/&nbsp;</span><a href="/p/microant/source/browse/trunk/DealWayIM/webapp/">webapp</a><span class="sp">/&nbsp;</span>socket.swf</span>
+ 
+ 
+ </div>
+ 
+ </div>
+ <div style="clear:both"></div>
+ </div>
+ </div>
+</div>
+
+<style type="text/css">
+ 
+  tr.inline_comment {
+ background: #fff;
+ vertical-align: top;
+ }
+ div.draft, div.published {
+ padding: .3em;
+ border: 1px solid #999; 
+ margin-bottom: .1em;
+ font-family: arial, sans-serif;
+ max-width: 60em;
+ }
+ div.draft {
+ background: #ffa;
+ } 
+ div.published {
+ background: #e5ecf9;
+ }
+ div.published .body, div.draft .body {
+ padding: .5em .1em .1em .1em;
+ max-width: 60em;
+ white-space: pre-wrap;
+ white-space: -moz-pre-wrap;
+ white-space: -pre-wrap;
+ white-space: -o-pre-wrap;
+ word-wrap: break-word;
+ }
+ div.draft .actions {
+ margin-left: 1em;
+ font-size: 90%;
+ }
+ div.draft form {
+ padding: .5em .5em .5em 0;
+ }
+ div.draft textarea, div.published textarea {
+ width: 95%;
+ height: 10em;
+ font-family: arial, sans-serif;
+ margin-bottom: .5em;
+ }
+
+
+ 
+ .nocursor, .nocursor td, .cursor_hidden, .cursor_hidden td {
+ background-color: white;
+ height: 2px;
+ }
+ .cursor, .cursor td {
+ background-color: darkblue;
+ height: 2px;
+ display: '';
+ }
+
+</style>
+<div class="fc">
+ 
+
+
+<table class="opened" id="review_comment_area"><tr>
+<td id="nums">
+<pre><table width="100%"><tr class="nocursor"><td></td></tr></table></pre>
+
+<pre><table width="100%"><tr id="gr_svn21_1"><td id="1"><a href="#1">1</a></td></tr
+><tr id="gr_svn21_2"><td id="2"><a href="#2">2</a></td></tr
+><tr id="gr_svn21_3"><td id="3"><a href="#3">3</a></td></tr
+><tr id="gr_svn21_4"><td id="4"><a href="#4">4</a></td></tr
+><tr id="gr_svn21_5"><td id="5"><a href="#5">5</a></td></tr
+></table></pre>
+
+<pre><table width="100%"><tr class="nocursor"><td></td></tr></table></pre>
+</td>
+<td id="lines">
+<pre class="prettyprint"><table width="100%"><tr class="cursor_stop cursor_hidden"><td></td></tr></table></pre>
+
+<pre class="prettyprint "><table><tr
+id=sl_svn21_1><td class="source">CWS  x}Q=OÂ@~®-\­ÈÄ`c@&#39;gc£Q0°¸¦4éüâÀØAÿi½÷zñ7ïÇó¼ÏøFÍCß)¢ãN°Z g!æ&quot;SF*ñk¢ðx7.=^Qþ%ZD2ÎfsuQ&amp;ßn¡u<br></td></tr
+><tr
+id=sl_svn21_2><td class="source"><br></td></tr
+><tr
+id=sl_svn21_3><td class="source">ê4MbµgKªaoB&amp;ÈøèeÆ:½¼ß­Â&gt;ßë^~¸pÁ»:Þ¤3ÕÖcëd+ë:ÀàÉ,F¹¿ê±k*rcýO}òpKÙ[76÷8N¤´´à_ÚþWV&lt;Â2Üy,H»<br></td></tr
+><tr
+id=sl_svn21_4><td class="source">Ñq<br></td></tr
+><tr
+id=sl_svn21_5><td class="source">äèjïA{«cT0É°zå­Þ±Ï(cæ°ÁÖw9§nv	oÔä(_g~4åVÇù6:Úia®3æwy (1VÙ,}ÂH«Îáì(t²?]jBj~BÍoH\oaþµd¢»ÚûÁ$<br></td></tr
+></table></pre>
+
+<pre class="prettyprint"><table width="100%"><tr class="cursor_stop cursor_hidden"><td></td></tr></table></pre>
+</td>
+</tr></table>
+
+
+
+ <div id="log">
+ <div style="text-align:right">
+ <a class="ifCollapse" href="#" onclick="_toggleMeta('microant', this)">Show details</a>
+ <a class="ifExpand" href="#" onclick="_toggleMeta('microant', this)">Hide details</a>
+ </div>
+ <div class="ifExpand">
+ 
+ <div class="pmeta_bubble_bg" style="border:1px solid white">
+ <div class="round4"></div>
+ <div class="round2"></div>
+ <div class="round1"></div>
+ <div class="box-inner">
+ <div id="changelog">
+ <p>Change log</p>
+ <div>
+ <a href="/p/microant/source/detail?spec=svn2551&r=21">r21</a>
+ by philip.kissme
+ on Dec 27, 2007
+ &nbsp; <a href="/p/microant/source/diff?spec=svn2551&r=21&amp;format=side&amp;path=/trunk/DealWayIM/webapp/socket.swf&amp;old_path=/trunk/DealWayIM/webapp/socket.swf&amp;old=">Diff</a>
+ </div>
+ <pre>[No log message]</pre>
+ </div>
+ 
+ 
+ 
+ 
+ 
+ 
+ <script type="text/javascript">
+ var detail_url = '/p/microant/source/detail?r=21&spec=svn2551';
+ var publish_url = '/p/microant/source/detail?r=21&spec=svn2551#publish';
+ // describe the paths of this revision in javascript.
+ var changed_paths = [];
+ var changed_urls = [];
+ 
+ changed_paths.push('/trunk/DealWayIM/webapp');
+ changed_urls.push('/p/microant/source/browse/trunk/DealWayIM/webapp?r=21&spec=svn2551');
+ 
+ 
+ changed_paths.push('/trunk/DealWayIM/webapp/Help.ftl');
+ changed_urls.push('/p/microant/source/browse/trunk/DealWayIM/webapp/Help.ftl?r=21&spec=svn2551');
+ 
+ 
+ changed_paths.push('/trunk/DealWayIM/webapp/MessageManager.ftl');
+ changed_urls.push('/p/microant/source/browse/trunk/DealWayIM/webapp/MessageManager.ftl?r=21&spec=svn2551');
+ 
+ 
+ changed_paths.push('/trunk/DealWayIM/webapp/UserInfo.jsp');
+ changed_urls.push('/p/microant/source/browse/trunk/DealWayIM/webapp/UserInfo.jsp?r=21&spec=svn2551');
+ 
+ 
+ changed_paths.push('/trunk/DealWayIM/webapp/WEB-INF/include');
+ changed_urls.push('/p/microant/source/browse/trunk/DealWayIM/webapp/WEB-INF/include?r=21&spec=svn2551');
+ 
+ 
+ changed_paths.push('/trunk/DealWayIM/webapp/WEB-INF/lib/antlr-2.7.6.jar');
+ changed_urls.push('/p/microant/source/browse/trunk/DealWayIM/webapp/WEB-INF/lib/antlr-2.7.6.jar?r=21&spec=svn2551');
+ 
+ 
+ changed_paths.push('/trunk/DealWayIM/webapp/WEB-INF/lib/build/cenquatasks.jar');
+ changed_urls.push('/p/microant/source/browse/trunk/DealWayIM/webapp/WEB-INF/lib/build/cenquatasks.jar?r=21&spec=svn2551');
+ 
+ 
+ changed_paths.push('/trunk/DealWayIM/webapp/WEB-INF/lib/build/jmock-1.0.1.jar');
+ changed_urls.push('/p/microant/source/browse/trunk/DealWayIM/webapp/WEB-INF/lib/build/jmock-1.0.1.jar?r=21&spec=svn2551');
+ 
+ 
+ changed_paths.push('/trunk/DealWayIM/webapp/WEB-INF/lib/build/jsp-api.jar');
+ changed_urls.push('/p/microant/source/browse/trunk/DealWayIM/webapp/WEB-INF/lib/build/jsp-api.jar?r=21&spec=svn2551');
+ 
+ 
+ changed_paths.push('/trunk/DealWayIM/webapp/WEB-INF/lib/cglib-2.1.3.jar');
+ changed_urls.push('/p/microant/source/browse/trunk/DealWayIM/webapp/WEB-INF/lib/cglib-2.1.3.jar?r=21&spec=svn2551');
+ 
+ 
+ changed_paths.push('/trunk/DealWayIM/webapp/WEB-INF/lib/cindy-3.0b1.jar');
+ changed_urls.push('/p/microant/source/browse/trunk/DealWayIM/webapp/WEB-INF/lib/cindy-3.0b1.jar?r=21&spec=svn2551');
+ 
+ 
+ changed_paths.push('/trunk/DealWayIM/webapp/WEB-INF/lib/commons-beanutils-1.7.0.jar');
+ changed_urls.push('/p/microant/source/browse/trunk/DealWayIM/webapp/WEB-INF/lib/commons-beanutils-1.7.0.jar?r=21&spec=svn2551');
+ 
+ 
+ changed_paths.push('/trunk/DealWayIM/webapp/WEB-INF/lib/commons-io.jar');
+ changed_urls.push('/p/microant/source/browse/trunk/DealWayIM/webapp/WEB-INF/lib/commons-io.jar?r=21&spec=svn2551');
+ 
+ 
+ changed_paths.push('/trunk/DealWayIM/webapp/WEB-INF/lib/ezmorph-1.0.2.jar');
+ changed_urls.push('/p/microant/source/browse/trunk/DealWayIM/webapp/WEB-INF/lib/ezmorph-1.0.2.jar?r=21&spec=svn2551');
+ 
+ 
+ changed_paths.push('/trunk/DealWayIM/webapp/WEB-INF/lib/jcommon.jar');
+ changed_urls.push('/p/microant/source/browse/trunk/DealWayIM/webapp/WEB-INF/lib/jcommon.jar?r=21&spec=svn2551');
+ 
+ 
+ changed_paths.push('/trunk/DealWayIM/webapp/WEB-INF/lib/jta.jar');
+ changed_urls.push('/p/microant/source/browse/trunk/DealWayIM/webapp/WEB-INF/lib/jta.jar?r=21&spec=svn2551');
+ 
+ 
+ changed_paths.push('/trunk/DealWayIM/webapp/WEB-INF/lib/jython.jar');
+ changed_urls.push('/p/microant/source/browse/trunk/DealWayIM/webapp/WEB-INF/lib/jython.jar?r=21&spec=svn2551');
+ 
+ 
+ changed_paths.push('/trunk/DealWayIM/webapp/WEB-INF/lib/rife-continuations.jar');
+ changed_urls.push('/p/microant/source/browse/trunk/DealWayIM/webapp/WEB-INF/lib/rife-continuations.jar?r=21&spec=svn2551');
+ 
+ 
+ changed_paths.push('/trunk/DealWayIM/webapp/WEB-INF/lib/stringtree-json-2.0.7.jar');
+ changed_urls.push('/p/microant/source/browse/trunk/DealWayIM/webapp/WEB-INF/lib/stringtree-json-2.0.7.jar?r=21&spec=svn2551');
+ 
+ 
+ changed_paths.push('/trunk/DealWayIM/webapp/images');
+ changed_urls.push('/p/microant/source/browse/trunk/DealWayIM/webapp/images?r=21&spec=svn2551');
+ 
+ 
+ changed_paths.push('/trunk/DealWayIM/webapp/images/01.gif');
+ changed_urls.push('/p/microant/source/browse/trunk/DealWayIM/webapp/images/01.gif?r=21&spec=svn2551');
+ 
+ 
+ changed_paths.push('/trunk/DealWayIM/webapp/images/Thumbs.db');
+ changed_urls.push('/p/microant/source/browse/trunk/DealWayIM/webapp/images/Thumbs.db?r=21&spec=svn2551');
+ 
+ 
+ changed_paths.push('/trunk/DealWayIM/webapp/images/article.gif');
+ changed_urls.push('/p/microant/source/browse/trunk/DealWayIM/webapp/images/article.gif?r=21&spec=svn2551');
+ 
+ 
+ changed_paths.push('/trunk/DealWayIM/webapp/images/bullet.gif');
+ changed_urls.push('/p/microant/source/browse/trunk/DealWayIM/webapp/images/bullet.gif?r=21&spec=svn2551');
+ 
+ 
+ changed_paths.push('/trunk/DealWayIM/webapp/images/cancel.gif');
+ changed_urls.push('/p/microant/source/browse/trunk/DealWayIM/webapp/images/cancel.gif?r=21&spec=svn2551');
+ 
+ 
+ changed_paths.push('/trunk/DealWayIM/webapp/images/grid/loading.gif');
+ changed_urls.push('/p/microant/source/browse/trunk/DealWayIM/webapp/images/grid/loading.gif?r=21&spec=svn2551');
+ 
+ 
+ changed_paths.push('/trunk/DealWayIM/webapp/images/grid/page-first-disabled.gif');
+ changed_urls.push('/p/microant/source/browse/trunk/DealWayIM/webapp/images/grid/page-first-disabled.gif?r=21&spec=svn2551');
+ 
+ 
+ changed_paths.push('/trunk/DealWayIM/webapp/images/grid/page-prev-disabled.gif');
+ changed_urls.push('/p/microant/source/browse/trunk/DealWayIM/webapp/images/grid/page-prev-disabled.gif?r=21&spec=svn2551');
+ 
+ 
+ changed_paths.push('/trunk/DealWayIM/webapp/images/grid/search.gif');
+ changed_urls.push('/p/microant/source/browse/trunk/DealWayIM/webapp/images/grid/search.gif?r=21&spec=svn2551');
+ 
+ 
+ changed_paths.push('/trunk/DealWayIM/webapp/images/header.gif');
+ changed_urls.push('/p/microant/source/browse/trunk/DealWayIM/webapp/images/header.gif?r=21&spec=svn2551');
+ 
+ 
+ changed_paths.push('/trunk/DealWayIM/webapp/images/new_tab.gif');
+ changed_urls.push('/p/microant/source/browse/trunk/DealWayIM/webapp/images/new_tab.gif?r=21&spec=svn2551');
+ 
+ 
+ changed_paths.push('/trunk/DealWayIM/webapp/images/new_window.gif');
+ changed_urls.push('/p/microant/source/browse/trunk/DealWayIM/webapp/images/new_window.gif?r=21&spec=svn2551');
+ 
+ 
+ changed_paths.push('/trunk/DealWayIM/webapp/images/post-bg.gif');
+ changed_urls.push('/p/microant/source/browse/trunk/DealWayIM/webapp/images/post-bg.gif?r=21&spec=svn2551');
+ 
+ 
+ changed_paths.push('/trunk/DealWayIM/webapp/images/preview.gif');
+ changed_urls.push('/p/microant/source/browse/trunk/DealWayIM/webapp/images/preview.gif?r=21&spec=svn2551');
+ 
+ 
+ changed_paths.push('/trunk/DealWayIM/webapp/images/signout.gif');
+ changed_urls.push('/p/microant/source/browse/trunk/DealWayIM/webapp/images/signout.gif?r=21&spec=svn2551');
+ 
+ 
+ changed_paths.push('/trunk/DealWayIM/webapp/images/tab-close-on.gif');
+ changed_urls.push('/p/microant/source/browse/trunk/DealWayIM/webapp/images/tab-close-on.gif?r=21&spec=svn2551');
+ 
+ 
+ changed_paths.push('/trunk/DealWayIM/webapp/index.html');
+ changed_urls.push('/p/microant/source/browse/trunk/DealWayIM/webapp/index.html?r=21&spec=svn2551');
+ 
+ 
+ changed_paths.push('/trunk/DealWayIM/webapp/js/DealWayIM.js');
+ changed_urls.push('/p/microant/source/browse/trunk/DealWayIM/webapp/js/DealWayIM.js?r=21&spec=svn2551');
+ 
+ 
+ changed_paths.push('/trunk/DealWayIM/webapp/js/Home.js');
+ changed_urls.push('/p/microant/source/browse/trunk/DealWayIM/webapp/js/Home.js?r=21&spec=svn2551');
+ 
+ 
+ changed_paths.push('/trunk/DealWayIM/webapp/js/MessageManager.js');
+ changed_urls.push('/p/microant/source/browse/trunk/DealWayIM/webapp/js/MessageManager.js?r=21&spec=svn2551');
+ 
+ 
+ changed_paths.push('/trunk/DealWayIM/webapp/js/VisitLogManager.js');
+ changed_urls.push('/p/microant/source/browse/trunk/DealWayIM/webapp/js/VisitLogManager.js?r=21&spec=svn2551');
+ 
+ 
+ changed_paths.push('/trunk/DealWayIM/webapp/js/ext-jquery-adapter.js');
+ changed_urls.push('/p/microant/source/browse/trunk/DealWayIM/webapp/js/ext-jquery-adapter.js?r=21&spec=svn2551');
+ 
+ 
+ changed_paths.push('/trunk/DealWayIM/webapp/logo/default.jpg');
+ changed_urls.push('/p/microant/source/browse/trunk/DealWayIM/webapp/logo/default.jpg?r=21&spec=svn2551');
+ 
+ 
+ changed_paths.push('/trunk/DealWayIM/webapp/resources');
+ changed_urls.push('/p/microant/source/browse/trunk/DealWayIM/webapp/resources?r=21&spec=svn2551');
+ 
+ 
+ changed_paths.push('/trunk/DealWayIM/webapp/resources/css/box.css');
+ changed_urls.push('/p/microant/source/browse/trunk/DealWayIM/webapp/resources/css/box.css?r=21&spec=svn2551');
+ 
+ 
+ changed_paths.push('/trunk/DealWayIM/webapp/resources/css/button.css');
+ changed_urls.push('/p/microant/source/browse/trunk/DealWayIM/webapp/resources/css/button.css?r=21&spec=svn2551');
+ 
+ 
+ changed_paths.push('/trunk/DealWayIM/webapp/resources/css/combo.css');
+ changed_urls.push('/p/microant/source/browse/trunk/DealWayIM/webapp/resources/css/combo.css?r=21&spec=svn2551');
+ 
+ 
+ changed_paths.push('/trunk/DealWayIM/webapp/resources/css/date-picker.css');
+ changed_urls.push('/p/microant/source/browse/trunk/DealWayIM/webapp/resources/css/date-picker.css?r=21&spec=svn2551');
+ 
+ 
+ changed_paths.push('/trunk/DealWayIM/webapp/resources/css/debug.css');
+ changed_urls.push('/p/microant/source/browse/trunk/DealWayIM/webapp/resources/css/debug.css?r=21&spec=svn2551');
+ 
+ 
+ changed_paths.push('/trunk/DealWayIM/webapp/resources/css/ext-all.css');
+ changed_urls.push('/p/microant/source/browse/trunk/DealWayIM/webapp/resources/css/ext-all.css?r=21&spec=svn2551');
+ 
+ 
+ function getCurrentPageIndex() {
+ for (var i = 0; i < changed_paths.length; i++) {
+ if (selected_path == changed_paths[i]) {
+ return i;
+ }
+ }
+ }
+ function getNextPage() {
+ var i = getCurrentPageIndex();
+ if (i < changed_paths.length - 1) {
+ return changed_urls[i + 1];
+ }
+ return null;
+ }
+ function getPreviousPage() {
+ var i = getCurrentPageIndex();
+ if (i > 0) {
+ return changed_urls[i - 1];
+ }
+ return null;
+ }
+ function gotoNextPage() {
+ var page = getNextPage();
+ if (!page) {
+ page = detail_url;
+ }
+ window.location = page;
+ }
+ function gotoPreviousPage() {
+ var page = getPreviousPage();
+ if (!page) {
+ page = detail_url;
+ }
+ window.location = page;
+ }
+ function gotoDetailPage() {
+ window.location = detail_url;
+ }
+ function gotoPublishPage() {
+ window.location = publish_url;
+ }
+</script>
+ 
+ <style type="text/css">
+ #review_nav {
+ border-top: 3px solid white;
+ padding-top: 6px;
+ margin-top: 1em;
+ }
+ #review_nav td {
+ vertical-align: middle;
+ }
+ #review_nav select {
+ margin: .5em 0;
+ }
+ </style>
+ <div id="review_nav">
+ <table><tr><td>Go to:&nbsp;</td><td>
+ <select name="files_in_rev" onchange="window.location=this.value">
+ 
+ <option value="/p/microant/source/browse/trunk/DealWayIM/webapp?r=21&amp;spec=svn2551"
+ 
+ >/trunk/DealWayIM/webapp</option>
+ 
+ <option value="/p/microant/source/browse/trunk/DealWayIM/webapp/Help.ftl?r=21&amp;spec=svn2551"
+ 
+ >/trunk/DealWayIM/webapp/Help.ftl</option>
+ 
+ <option value="/p/microant/source/browse/trunk/DealWayIM/webapp/MessageManager.ftl?r=21&amp;spec=svn2551"
+ 
+ >...lWayIM/webapp/MessageManager.ftl</option>
+ 
+ <option value="/p/microant/source/browse/trunk/DealWayIM/webapp/UserInfo.jsp?r=21&amp;spec=svn2551"
+ 
+ >...nk/DealWayIM/webapp/UserInfo.jsp</option>
+ 
+ <option value="/p/microant/source/browse/trunk/DealWayIM/webapp/WEB-INF/include?r=21&amp;spec=svn2551"
+ 
+ >...DealWayIM/webapp/WEB-INF/include</option>
+ 
+ <option value="/p/microant/source/browse/trunk/DealWayIM/webapp/WEB-INF/lib/antlr-2.7.6.jar?r=21&amp;spec=svn2551"
+ 
+ >...bapp/WEB-INF/lib/antlr-2.7.6.jar</option>
+ 
+ <option value="/p/microant/source/browse/trunk/DealWayIM/webapp/WEB-INF/lib/build/cenquatasks.jar?r=21&amp;spec=svn2551"
+ 
+ >...EB-INF/lib/build/cenquatasks.jar</option>
+ 
+ <option value="/p/microant/source/browse/trunk/DealWayIM/webapp/WEB-INF/lib/build/jmock-1.0.1.jar?r=21&amp;spec=svn2551"
+ 
+ >...EB-INF/lib/build/jmock-1.0.1.jar</option>
+ 
+ <option value="/p/microant/source/browse/trunk/DealWayIM/webapp/WEB-INF/lib/build/jsp-api.jar?r=21&amp;spec=svn2551"
+ 
+ >...pp/WEB-INF/lib/build/jsp-api.jar</option>
+ 
+ <option value="/p/microant/source/browse/trunk/DealWayIM/webapp/WEB-INF/lib/cglib-2.1.3.jar?r=21&amp;spec=svn2551"
+ 
+ >...bapp/WEB-INF/lib/cglib-2.1.3.jar</option>
+ 
+ <option value="/p/microant/source/browse/trunk/DealWayIM/webapp/WEB-INF/lib/cindy-3.0b1.jar?r=21&amp;spec=svn2551"
+ 
+ >...bapp/WEB-INF/lib/cindy-3.0b1.jar</option>
+ 
+ <option value="/p/microant/source/browse/trunk/DealWayIM/webapp/WEB-INF/lib/commons-beanutils-1.7.0.jar?r=21&amp;spec=svn2551"
+ 
+ >.../lib/commons-beanutils-1.7.0.jar</option>
+ 
+ <option value="/p/microant/source/browse/trunk/DealWayIM/webapp/WEB-INF/lib/commons-io.jar?r=21&amp;spec=svn2551"
+ 
+ >...ebapp/WEB-INF/lib/commons-io.jar</option>
+ 
+ <option value="/p/microant/source/browse/trunk/DealWayIM/webapp/WEB-INF/lib/ezmorph-1.0.2.jar?r=21&amp;spec=svn2551"
+ 
+ >...pp/WEB-INF/lib/ezmorph-1.0.2.jar</option>
+ 
+ <option value="/p/microant/source/browse/trunk/DealWayIM/webapp/WEB-INF/lib/jcommon.jar?r=21&amp;spec=svn2551"
+ 
+ >...M/webapp/WEB-INF/lib/jcommon.jar</option>
+ 
+ <option value="/p/microant/source/browse/trunk/DealWayIM/webapp/WEB-INF/lib/jta.jar?r=21&amp;spec=svn2551"
+ 
+ >...WayIM/webapp/WEB-INF/lib/jta.jar</option>
+ 
+ <option value="/p/microant/source/browse/trunk/DealWayIM/webapp/WEB-INF/lib/jython.jar?r=21&amp;spec=svn2551"
+ 
+ >...IM/webapp/WEB-INF/lib/jython.jar</option>
+ 
+ <option value="/p/microant/source/browse/trunk/DealWayIM/webapp/WEB-INF/lib/rife-continuations.jar?r=21&amp;spec=svn2551"
+ 
+ >...B-INF/lib/rife-continuations.jar</option>
+ 
+ <option value="/p/microant/source/browse/trunk/DealWayIM/webapp/WEB-INF/lib/stringtree-json-2.0.7.jar?r=21&amp;spec=svn2551"
+ 
+ >...NF/lib/stringtree-json-2.0.7.jar</option>
+ 
+ <option value="/p/microant/source/browse/trunk/DealWayIM/webapp/images?r=21&amp;spec=svn2551"
+ 
+ >/trunk/DealWayIM/webapp/images</option>
+ 
+ <option value="/p/microant/source/browse/trunk/DealWayIM/webapp/images/01.gif?r=21&amp;spec=svn2551"
+ 
+ >...k/DealWayIM/webapp/images/01.gif</option>
+ 
+ <option value="/p/microant/source/browse/trunk/DealWayIM/webapp/images/Thumbs.db?r=21&amp;spec=svn2551"
+ 
+ >...ealWayIM/webapp/images/Thumbs.db</option>
+ 
+ <option value="/p/microant/source/browse/trunk/DealWayIM/webapp/images/article.gif?r=21&amp;spec=svn2551"
+ 
+ >...lWayIM/webapp/images/article.gif</option>
+ 
+ <option value="/p/microant/source/browse/trunk/DealWayIM/webapp/images/bullet.gif?r=21&amp;spec=svn2551"
+ 
+ >...alWayIM/webapp/images/bullet.gif</option>
+ 
+ <option value="/p/microant/source/browse/trunk/DealWayIM/webapp/images/cancel.gif?r=21&amp;spec=svn2551"
+ 
+ >...alWayIM/webapp/images/cancel.gif</option>
+ 
+ <option value="/p/microant/source/browse/trunk/DealWayIM/webapp/images/grid/loading.gif?r=21&amp;spec=svn2551"
+ 
+ >...M/webapp/images/grid/loading.gif</option>
+ 
+ <option value="/p/microant/source/browse/trunk/DealWayIM/webapp/images/grid/page-first-disabled.gif?r=21&amp;spec=svn2551"
+ 
+ >...ges/grid/page-first-disabled.gif</option>
+ 
+ <option value="/p/microant/source/browse/trunk/DealWayIM/webapp/images/grid/page-prev-disabled.gif?r=21&amp;spec=svn2551"
+ 
+ >...ages/grid/page-prev-disabled.gif</option>
+ 
+ <option value="/p/microant/source/browse/trunk/DealWayIM/webapp/images/grid/search.gif?r=21&amp;spec=svn2551"
+ 
+ >...IM/webapp/images/grid/search.gif</option>
+ 
+ <option value="/p/microant/source/browse/trunk/DealWayIM/webapp/images/header.gif?r=21&amp;spec=svn2551"
+ 
+ >...alWayIM/webapp/images/header.gif</option>
+ 
+ <option value="/p/microant/source/browse/trunk/DealWayIM/webapp/images/new_tab.gif?r=21&amp;spec=svn2551"
+ 
+ >...lWayIM/webapp/images/new_tab.gif</option>
+ 
+ <option value="/p/microant/source/browse/trunk/DealWayIM/webapp/images/new_window.gif?r=21&amp;spec=svn2551"
+ 
+ >...yIM/webapp/images/new_window.gif</option>
+ 
+ <option value="/p/microant/source/browse/trunk/DealWayIM/webapp/images/post-bg.gif?r=21&amp;spec=svn2551"
+ 
+ >...lWayIM/webapp/images/post-bg.gif</option>
+ 
+ <option value="/p/microant/source/browse/trunk/DealWayIM/webapp/images/preview.gif?r=21&amp;spec=svn2551"
+ 
+ >...lWayIM/webapp/images/preview.gif</option>
+ 
+ <option value="/p/microant/source/browse/trunk/DealWayIM/webapp/images/signout.gif?r=21&amp;spec=svn2551"
+ 
+ >...lWayIM/webapp/images/signout.gif</option>
+ 
+ <option value="/p/microant/source/browse/trunk/DealWayIM/webapp/images/tab-close-on.gif?r=21&amp;spec=svn2551"
+ 
+ >...M/webapp/images/tab-close-on.gif</option>
+ 
+ <option value="/p/microant/source/browse/trunk/DealWayIM/webapp/index.html?r=21&amp;spec=svn2551"
+ 
+ >/trunk/DealWayIM/webapp/index.html</option>
+ 
+ <option value="/p/microant/source/browse/trunk/DealWayIM/webapp/js/DealWayIM.js?r=21&amp;spec=svn2551"
+ 
+ >...DealWayIM/webapp/js/DealWayIM.js</option>
+ 
+ <option value="/p/microant/source/browse/trunk/DealWayIM/webapp/js/Home.js?r=21&amp;spec=svn2551"
+ 
+ >/trunk/DealWayIM/webapp/js/Home.js</option>
+ 
+ <option value="/p/microant/source/browse/trunk/DealWayIM/webapp/js/MessageManager.js?r=21&amp;spec=svn2551"
+ 
+ >...ayIM/webapp/js/MessageManager.js</option>
+ 
+ <option value="/p/microant/source/browse/trunk/DealWayIM/webapp/js/VisitLogManager.js?r=21&amp;spec=svn2551"
+ 
+ >...yIM/webapp/js/VisitLogManager.js</option>
+ 
+ <option value="/p/microant/source/browse/trunk/DealWayIM/webapp/js/ext-jquery-adapter.js?r=21&amp;spec=svn2551"
+ 
+ >.../webapp/js/ext-jquery-adapter.js</option>
+ 
+ <option value="/p/microant/source/browse/trunk/DealWayIM/webapp/logo/default.jpg?r=21&amp;spec=svn2551"
+ 
+ >...ealWayIM/webapp/logo/default.jpg</option>
+ 
+ <option value="/p/microant/source/browse/trunk/DealWayIM/webapp/resources?r=21&amp;spec=svn2551"
+ 
+ >/trunk/DealWayIM/webapp/resources</option>
+ 
+ <option value="/p/microant/source/browse/trunk/DealWayIM/webapp/resources/css/box.css?r=21&amp;spec=svn2551"
+ 
+ >...yIM/webapp/resources/css/box.css</option>
+ 
+ <option value="/p/microant/source/browse/trunk/DealWayIM/webapp/resources/css/button.css?r=21&amp;spec=svn2551"
+ 
+ >.../webapp/resources/css/button.css</option>
+ 
+ <option value="/p/microant/source/browse/trunk/DealWayIM/webapp/resources/css/combo.css?r=21&amp;spec=svn2551"
+ 
+ >...M/webapp/resources/css/combo.css</option>
+ 
+ <option value="/p/microant/source/browse/trunk/DealWayIM/webapp/resources/css/date-picker.css?r=21&amp;spec=svn2551"
+ 
+ >...pp/resources/css/date-picker.css</option>
+ 
+ <option value="/p/microant/source/browse/trunk/DealWayIM/webapp/resources/css/debug.css?r=21&amp;spec=svn2551"
+ 
+ >...M/webapp/resources/css/debug.css</option>
+ 
+ <option value="/p/microant/source/browse/trunk/DealWayIM/webapp/resources/css/ext-all.css?r=21&amp;spec=svn2551"
+ 
+ >...webapp/resources/css/ext-all.css</option>
+ 
+ </select>
+ </td></tr></table>
+ 
+ 
+ 
+ <div id="review_instr" class="closed">
+ <a class="ifOpened" href="/p/microant/source/detail?r=21&spec=svn2551#publish">Publish your comments</a>
+ <div class="ifClosed">Double click a line to add a comment</div>
+ </div>
+ 
+ </div>
+ 
+ 
+ </div>
+ <div class="round1"></div>
+ <div class="round2"></div>
+ <div class="round4"></div>
+ </div>
+ <div class="pmeta_bubble_bg" style="border:1px solid white">
+ <div class="round4"></div>
+ <div class="round2"></div>
+ <div class="round1"></div>
+ <div class="box-inner">
+ <div id="older_bubble">
+ <p>Older revisions</p>
+ 
+ <a href="/p/microant/source/list?path=/trunk/DealWayIM/webapp/socket.swf&start=21">All revisions of this file</a>
+ </div>
+ </div>
+ <div class="round1"></div>
+ <div class="round2"></div>
+ <div class="round4"></div>
+ </div>
+ <div class="pmeta_bubble_bg" style="border:1px solid white">
+ <div class="round4"></div>
+ <div class="round2"></div>
+ <div class="round1"></div>
+ <div class="box-inner">
+ <div id="fileinfo_bubble">
+ <p>File info</p>
+ 
+ <div>Size: 353 bytes,
+ 5 lines</div>
+ 
+ <div><a href="http://microant.googlecode.com/svn/trunk/DealWayIM/webapp/socket.swf">View raw file</a></div>
+ </div>
+ 
+ <div id="props">
+ <p>File properties</p>
+ <dl>
+ 
+ <dt>svn:mime-type</dt>
+ <dd>application/octet-stream</dd>
+ 
+ </dl>
+ </div>
+ 
+ </div>
+ <div class="round1"></div>
+ <div class="round2"></div>
+ <div class="round4"></div>
+ </div>
+ </div>
+ </div>
+
+
+</div>
+</div>
+
+<script src="http://www.gstatic.com/codesite/ph/17848733607936693291/js/source_file_scripts_20080115.js"></script>
+
+ <script type="text/javascript" src="http://kibbles.googlecode.com/files/kibbles-1.3.1.comp.js"></script>
+ <script type="text/javascript">
+ var lastStop = null;
+ var initilized = false;
+ 
+ function updateCursor(next, prev) {
+ if (prev && prev.element) {
+ prev.element.className = 'cursor_stop cursor_hidden';
+ }
+ if (next && next.element) {
+ next.element.className = 'cursor_stop cursor';
+ lastStop = next.index;
+ }
+ }
+ 
+ function pubRevealed(data) {
+ updateCursorForCell(data.cellId, 'cursor_stop cursor_hidden');
+ if (initilized) {
+ reloadCursors();
+ }
+ }
+ 
+ function draftRevealed(data) {
+ updateCursorForCell(data.cellId, 'cursor_stop cursor_hidden');
+ if (initilized) {
+ reloadCursors();
+ }
+ }
+ 
+ function draftDestroyed(data) {
+ updateCursorForCell(data.cellId, 'nocursor');
+ if (initilized) {
+ reloadCursors();
+ }
+ }
+ function reloadCursors() {
+ kibbles.skipper.reset();
+ loadCursors();
+ if (lastStop != null) {
+ kibbles.skipper.setCurrentStop(lastStop);
+ }
+ }
+ // possibly the simplest way to insert any newly added comments
+ // is to update the class of the corresponding cursor row,
+ // then refresh the entire list of rows.
+ function updateCursorForCell(cellId, className) {
+ var cell = document.getElementById(cellId);
+ // we have to go two rows back to find the cursor location
+ var row = getPreviousElement(cell.parentNode);
+ row.className = className;
+ }
+ // returns the previous element, ignores text nodes.
+ function getPreviousElement(e) {
+ var element = e.previousSibling;
+ if (element.nodeType == 3) {
+ element = element.previousSibling;
+ }
+ if (element && element.tagName) {
+ return element;
+ }
+ }
+ function loadCursors() {
+ // register our elements with skipper
+ var elements = CR_getElements('*', 'cursor_stop');
+ var len = elements.length;
+ for (var i = 0; i < len; i++) {
+ var element = elements[i]; 
+ element.className = 'cursor_stop cursor_hidden';
+ kibbles.skipper.append(element);
+ }
+ }
+ function toggleComments() {
+ CR_toggleCommentDisplay();
+ reloadCursors();
+ }
+ function keysOnLoadHandler() {
+ // setup skipper
+ kibbles.skipper.addStopListener(
+ kibbles.skipper.LISTENER_TYPE.PRE, updateCursor);
+ // Set the 'offset' option to return the middle of the client area
+ // an option can be a static value, or a callback
+ kibbles.skipper.setOption('padding_top', 50);
+ // Set the 'offset' option to return the middle of the client area
+ // an option can be a static value, or a callback
+ kibbles.skipper.setOption('padding_bottom', 100);
+ // Register our keys
+ kibbles.skipper.addFwdKey("n");
+ kibbles.skipper.addRevKey("p");
+ kibbles.keys.addKeyPressListener(
+ 'u', function() { window.location = detail_url; });
+ kibbles.keys.addKeyPressListener(
+ 'r', function() { window.location = detail_url + '#publish'; });
+ 
+ kibbles.keys.addKeyPressListener('j', gotoNextPage);
+ kibbles.keys.addKeyPressListener('k', gotoPreviousPage);
+ 
+ 
+ kibbles.keys.addKeyPressListener('h', toggleComments);
+ 
+ }
+ window.onload = function() {keysOnLoadHandler();};
+ </script>
+
+
+<!-- code review support -->
+<script src="http://www.gstatic.com/codesite/ph/17848733607936693291/js/code_review_scripts_20081023.js"></script>
+<script type="text/javascript">
+ 
+ // the comment form template
+ var form = '<div class="draft"><div class="header"><span class="title">Draft comment:</span></div>' +
+ '<div class="body"><form onsubmit="return false;"><textarea id="$ID">$BODY</textarea><br>$ACTIONS</form></div>' +
+ '</div>';
+ // the comment "plate" template used for both draft and published comment "plates".
+ var draft_comment = '<div class="draft" ondblclick="$ONDBLCLICK">' +
+ '<div class="header"><span class="title">Draft comment:</span><span class="actions">$ACTIONS</span></div>' +
+ '<pre id="$ID" class="body">$BODY</pre>' +
+ '</div>';
+ var published_comment = '<div class="published">' +
+ '<div class="header"><span class="title"><a href="$PROFILE_URL">$AUTHOR:</a></span><div>' +
+ '<pre id="$ID" class="body">$BODY</pre>' +
+ '</div>';
+
+ function showPublishInstructions() {
+ var element = document.getElementById('review_instr');
+ if (element) {
+ element.className = 'opened';
+ }
+ }
+ function revsOnLoadHandler() {
+ // register our source container with the commenting code
+ var paths = {'svn21': '/trunk/DealWayIM/webapp/socket.swf'}
+ CR_setup('microant', '', 'svn2551', paths, '0222e624a17265bc4e02074f4924c842',
+ CR_BrowseIntegrationFactory);
+ // register our hidden ui elements with the code commenting code ui builder.
+ CR_registerLayoutElement('form', form);
+ CR_registerLayoutElement('draft_comment', draft_comment);
+ CR_registerLayoutElement('published_comment', published_comment);
+ 
+ // register our source container with the commenting code
+ // in this case we're registering the container and the revison
+ // associated with the contianer which may be the primary revision
+ // or may be a previous revision against which the primary revision
+ // of the file is being compared.
+ CR_registerSourceContainer(document.getElementById('lines'), 'svn21');
+ 
+ CR_registerActivityListener(CR_ACTIVITY_TYPE.REVEAL_DRAFT_PLATE, showPublishInstructions);
+ 
+ CR_registerActivityListener(CR_ACTIVITY_TYPE.REVEAL_PUB_PLATE, pubRevealed);
+ CR_registerActivityListener(CR_ACTIVITY_TYPE.REVEAL_DRAFT_PLATE, draftRevealed);
+ CR_registerActivityListener(CR_ACTIVITY_TYPE.DISCARD_DRAFT_COMMENT, draftDestroyed);
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ var initilized = true;
+ reloadCursors();
+ }
+ window.onload = function() {keysOnLoadHandler(); revsOnLoadHandler();};
+</script>
+
+<script type="text/javascript" src="http://www.gstatic.com/codesite/ph/17848733607936693291/js/dit_scripts_20081013.js"></script>
+
+ 
+ <script type="text/javascript" src="http://www.gstatic.com/codesite/ph/17848733607936693291/js/core_scripts_20081103.js"></script>
+ <script type="text/javascript" src="/js/codesite_product_dictionary_ph.pack.04102009.js"></script>
+ 
+ 
+ 
+ </div>
+<div id="footer" dir="ltr">
+ 
+ <div class="text">
+ 
+ &copy;2009 Google -
+ <a href="/">Code Home</a> -
+ <a href="/tos.html">Terms of Service</a> -
+ <a href="http://www.google.com/privacy.html">Privacy Policy</a> -
+ <a href="/more/">Site Directory</a> -
+ <a href="/p/support/">Project Hosting Help</a>
+ 
+ </div>
+</div>
+<script type="text/javascript">
+/**
+ * Reports analytics.
+ * It checks for the analytics functionality (window._gat) every 100ms
+ * until the analytics script is fully loaded in order to invoke siteTracker.
+ */
+function _CS_reportAnalytics() {
+ window.setTimeout(function() {
+ if (window._gat) {
+ try {
+ siteTracker = _gat._getTracker(CS_ANALYTICS_ACCOUNT);
+ siteTracker._trackPageview();
+ } catch (e) {}
+ 
+ } else {
+ _CS_reportAnalytics();
+ }
+ }, 100);
+}
+</script>
+
+ 
+ 
+ <div class="hostedBy" style="margin-top: -20px;">
+ <span style="vertical-align: top;">Hosted by</span>
+ <a href="/hosting/">
+ <img src="http://www.gstatic.com/codesite/ph/images/google_code_tiny.png" width="107" height="24" alt="Google Code">
+ </a>
+ </div>
+ 
+ 
+ 
+ 
+
+
+ 
+ </body>
+</html>
+
